@@ -1,5 +1,5 @@
 local Config = {
-    WindowName = "ZEN Smex | Made by Lazyllama",
+    WindowName = "ZEN Smex  |  Made by Lazyllama",
 	Color = Color3.fromRGB(0,255,211),
 	Keybind = Enum.KeyCode.RightControl
 }
@@ -60,7 +60,6 @@ function WalkSpeed_System()
     end
 end
 
-
 function Invis()
 local Player = game.Players.LocalPlayer
 local savepos = Player.Character.HumanoidRootPart.CFrame
@@ -76,16 +75,18 @@ end
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/im-retarded-3"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
-local Tab1 = Window:CreateTab("Age of Heroes")
-local Tab2 = Window:CreateTab("UI Settings")
+local Tab1 = Window:CreateTab("Exploits")
+local Tab2 = Window:CreateTab("Settings & Info")
 
 local Section1 = Tab1:CreateSection("")
 local Section2 = Tab1:CreateSection("")
+local Section6 = Tab1:CreateSection("")
 local Section3 = Tab2:CreateSection("Menu")
 local Section4 = Tab2:CreateSection("Background")
+local Section5 = Tab2:CreateSection("Credits")
 
 
-local Toggle1 = Section1:CreateToggle("Rep Farm", nil, function(State)
+local Toggle1 = Section1:CreateToggle("Farm All", nil, function(State)
 tt = State
 spawn(
     function()
@@ -113,7 +114,6 @@ while tt do
     wait()
     pcall(
         function()
-            wait(1000)
             for i, v in pairs(game.Workspace:GetChildren()) do
                 if v.ClassName == "Model" and v.Name == 'Civilian' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -124,7 +124,6 @@ while tt do
     )
     pcall(
         function()
-            wait(1000)
             for i, v in pairs(game.Workspace:GetChildren()) do                        
                 if v.ClassName == "Model" and v.Name == 'Police' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -135,7 +134,6 @@ while tt do
     )
     pcall(
         function()
-            wait(1000)
             for i, v in pairs(game.Workspace:GetChildren()) do
                 if v.ClassName == "Model" and v.Name == 'Thug' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -239,12 +237,14 @@ local Toggle1 = Section1:CreateToggle("Boxes Esp", nil, function(State)
     ESP.Boxes = State
 end)
 
-
 local TextBox1 = Section2:CreateTextBox("WalkSpeed", "Only numbers", true, function(Value)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 end)
 local TextBox1 = Section2:CreateTextBox("JumpPower", "Only numbers", true, function(Value)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+end)
+local TextBox1 = Section6:CreateTextBox("Player", "Player's username", true, function(Value)
+    local TPlayer = Value
 end)
 local Toggle1 = Section2:CreateToggle("Infinite Jump", nil, function(State)
 Infinite = State
@@ -276,11 +276,11 @@ game.Players.LocalPlayer:GetMouse().KeyDown:connect(
     end
 )
 end)
-local Toggle1 = Section2:CreateToggle("N NonePlatFormNoclip", nil, function(State)
+local Toggle1 = Section2:CreateToggle("V NonePlatFormNoclip", nil, function(State)
 hoe = State
 game.Players.LocalPlayer:GetMouse().KeyDown:connect(
     function(v)
-        if v == "n" then
+        if v == "v" then
             NoClip = not NoClip
             game:GetService("RunService").Stepped:connect(
                 function()
@@ -437,6 +437,21 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
 )
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(randomPlayer.Character.Head.Position.X, randomPlayer.Character.Head.Position.Y, randomPlayer.Character.Head.Position.Z))
 end)
+
+local Button22 = Selction2:CreateButton("Teleport", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+    CFrame.new(
+    Vector3.new(
+        TPlayer.Character.Head.Position.X,
+        TPlayer.Character.Head.Position.Y,
+        TPlayer.Character.Head.Position.Z
+    )
+)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(TPlayer.Character.Head.Position.X, TPlayer.Character.Head.Position.Y, TPlayer.Character.Head.Position.Z))
+end)
+
+
+
 local Button1 = Section2:CreateButton("Lag Switch F3", function()
 local X = false
 local C = settings()
@@ -533,8 +548,10 @@ Toggle3:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), functi
 	Config.Keybind = Enum.KeyCode[Key]
 end)
 Toggle3:SetState(true)
-Section3:CreateLabel("Credits Lazyllama#3006")
-Section3:CreateLabel("Credits Lazyllama#3006 Ui")
+Section5:CreateLabel("Lazyllama#3006 | UI & Scripts")
+Section5:CreateLabel("KingSnowman#5288 | Testing")
+Section5:CreateLabel("Dark_swe#7952 | Testing")
+
 
 local Colorpicker3 = Section3:CreateColorpicker("UI Color", function(Color)
 	Window:ChangeColor(Color)
@@ -542,8 +559,8 @@ end)
 Colorpicker3:UpdateColor(Config.Color)
 -- credits to jan for patterns
 local Dropdown3 = Section4:CreateDropdown("Image")
-local Option7 = Dropdown3:AddOption("Default", function(String)
-	Window:SetBackground("2151741365")
+local Option7 = Dropdown3:AddOption("Hexagon", function(String)
+	Window:SetBackground("6073628839")
 end)
 local Option8 = Dropdown3:AddOption("Hearts", function(String)
 	Window:SetBackground("6073763717")
@@ -551,8 +568,8 @@ end)
 local Option9 = Dropdown3:AddOption("Abstract", function(String)
 	Window:SetBackground("6073743871")
 end)
-local Option10 = Dropdown3:AddOption("Hexagon", function(String)
-	Window:SetBackground("6073628839")
+local Option10 = Dropdown3:AddOption("Default", function(String)
+	Window:SetBackground("2151741365")
 end)
 local Option11 = Dropdown3:AddOption("Circles", function(String)
 	Window:SetBackground("6071579801")
@@ -568,7 +585,7 @@ Option7:SetOption()
 local Colorpicker4 = Section4:CreateColorpicker("Color", function(Color)
 	Window:SetBackgroundColor(Color)
 end)
-Colorpicker4:UpdateColor(Color3.new(1,1,1))
+Colorpicker4:UpdateColor(Color3.new(0, 255, 211))
 
 local Slider3 = Section4:CreateSlider("Transparency",0,1,nil,false, function(Value)
 	Window:SetBackgroundTransparency(Value)
@@ -578,5 +595,5 @@ Slider3:SetValue(0)
 local Slider4 = Section4:CreateSlider("Tile Scale",0,1,nil,false, function(Value)
 	Window:SetTileScale(Value)
 end)
-Slider4:SetValue(0.5)
+Slider4:SetValue(1)
 
