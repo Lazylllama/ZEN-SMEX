@@ -113,6 +113,7 @@ while tt do
     wait()
     pcall(
         function()
+            wait(1000)
             for i, v in pairs(game.Workspace:GetChildren()) do
                 if v.ClassName == "Model" and v.Name == 'Civilian' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -123,6 +124,7 @@ while tt do
     )
     pcall(
         function()
+            wait(1000)
             for i, v in pairs(game.Workspace:GetChildren()) do                        
                 if v.ClassName == "Model" and v.Name == 'Police' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -133,6 +135,7 @@ while tt do
     )
     pcall(
         function()
+            wait(1000)
             for i, v in pairs(game.Workspace:GetChildren()) do
                 if v.ClassName == "Model" and v.Name == 'Thug' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -144,14 +147,6 @@ while tt do
 end             
 end)
     
-local Dropdown1 = Section1:CreateDropdown("Select Mob")
-Dropdown1:AddToolTip("Select Mob")
-for i,v in next, SS do
-Dropdown1:AddOption(v, function(String)
-SS = String
-end)
-end
-
 local Toggle1 = Section1:CreateToggle("Life Saver", nil, function(State)
 gogo = State
 if gogo then
