@@ -531,15 +531,8 @@ local TextBox1 = Section6:CreateTextBox("Player", "Player's username", true, fun
     local TPlayer = Value
 end)
 local Button1 = Section6:CreateButton("Teleport", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-    CFrame.new(
-    Vector3.new(
-        TPlayer.Character.Head.Position.X,
-        TPlayer.Character.Head.Position.Y,
-        TPlayer.Character.Head.Position.Z
-    )
-)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(TPlayer.Character.Head.Position.X, TPlayer.Character.Head.Position.Y, TPlayer.Character.Head.Position.Z))
+local me = game.Players.LocalPlayer.Character.HumanoidRootPart
+me.CFrame = game.Players[TPlayer].Character.HumanoidRootPart.CFrame
 end)
 
 
