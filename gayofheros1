@@ -438,7 +438,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(randomPlayer.Character.Head.Position.X, randomPlayer.Character.Head.Position.Y, randomPlayer.Character.Head.Position.Z))
 end)
 
-local Button22 = Selction2:CreateButton("Teleport", function()
+local Button22 = Selction6:CreateButton("Teleport", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
     CFrame.new(
     Vector3.new(
