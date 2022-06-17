@@ -117,10 +117,22 @@ while tt do
                 if v.ClassName == "Model" and v.Name == 'Civilian' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
                         v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+                end
+            end
+        end
+    )
+    pcall(
+        function()
             for i, v in pairs(game.Workspace:GetChildren()) do                        
                 if v.ClassName == "Model" and v.Name == 'Police' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
                         v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+                end
+            end
+        end
+    )
+    pcall(
+        function()
             for i, v in pairs(game.Workspace:GetChildren()) do
                 if v.ClassName == "Model" and v.Name == 'Thug' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -128,12 +140,10 @@ while tt do
                 end
             end
         end
-    end
-end   
-)   
-end
-end) 
-
+    )
+end             
+end)
+    
 local Dropdown1 = Section1:CreateDropdown("Select Mob")
 Dropdown1:AddToolTip("Select Mob")
 for i,v in next, SS do
