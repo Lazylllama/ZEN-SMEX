@@ -1,5 +1,5 @@
 local Config = {
-    WindowName = "ZEN Smex",
+    WindowName = "ZEN Smex | Made by Lazyllama",
 	Color = Color3.fromRGB(0,255,211),
 	Keybind = Enum.KeyCode.RightControl
 }
@@ -114,15 +114,18 @@ while tt do
     pcall(
         function()
             for i, v in pairs(game.Workspace:GetChildren()) do
-                if 
+                if v.ClassName == "Model" and SS == All and v.Name = Thug, Civillian, Police and v:FindFirstChild and v.Humanoid.Health > 0 then
+                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
+                        v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+                else
                     if v.ClassName == "Model" and v.Name == SS and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
                             v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
                     end
                 end
             end
-        end
-    )
+        end    
+    )   
 end
 end) 
 
