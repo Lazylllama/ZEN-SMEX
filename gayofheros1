@@ -1,6 +1,6 @@
 local Config = {
-    WindowName = "V.G Hub",
-	Color = Color3.fromRGB(255,128,64),
+    WindowName = "ZEN Smex",
+	Color = Color3.fromRGB(0,255,211),
 	Keybind = Enum.KeyCode.RightControl
 }
 repeat wait() until game:IsLoaded() wait()
@@ -16,7 +16,7 @@ for i,v in pairs(a) do
 table.insert(Table,i)
 end 
 
-SS = {"Thug",'Civilian','Police'}
+SS = {"Thug",'Civilian','Police','All'}
 
 local function CharacterAdded(v)
     local Food = false
@@ -114,9 +114,11 @@ while tt do
     pcall(
         function()
             for i, v in pairs(game.Workspace:GetChildren()) do
-                if v.ClassName == "Model" and v.Name == SS and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
-                        v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+                if 
+                    if v.ClassName == "Model" and v.Name == SS and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
+                            v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+                    end
                 end
             end
         end
@@ -290,14 +292,14 @@ game.Players.LocalPlayer:GetMouse().KeyDown:connect(
 end)
 
 
-local Toggle1 = Section2:CreateToggle("B Fly", nil, function(State)
+local Toggle1 = Section2:CreateToggle("R Fly", nil, function(State)
 sex2 = State
 local Max = 0
 local Players = game.Players
 local LP = Players.LocalPlayer
 local Mouse = LP:GetMouse()
 Mouse.KeyDown:connect(function(k)
-if k:lower() == 'b' then
+if k:lower() == 'r' then
 Max = Max + 1
 getgenv().Fly = false
 if sex2 then
@@ -518,8 +520,8 @@ Toggle3:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), functi
 	Config.Keybind = Enum.KeyCode[Key]
 end)
 Toggle3:SetState(true)
-Section3:CreateLabel("Credits DekuDimz#7960")
-Section3:CreateLabel("Credits AlexR32#3232 Ui")
+Section3:CreateLabel("Credits Lazyllama#3006")
+Section3:CreateLabel("Credits Lazyllama#3006 Ui")
 
 local Colorpicker3 = Section3:CreateColorpicker("UI Color", function(Color)
 	Window:ChangeColor(Color)

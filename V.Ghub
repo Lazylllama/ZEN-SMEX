@@ -301,21 +301,21 @@ else
 end
 game.StarterGui:SetCore("SendNotification", {
   Title = "Warning",
-  Text = "RightControl to toggle"
+  Text = "RightShift to toggle"
 })
 game.StarterGui:SetCore("SendNotification", {
-  Title = "Credis",
-  Text = "CharWar Serverhops Toxic Mods screen thingy And Kiriot22 esp,IY for fly script inspiration,Staylin Save Settings,Felix for being sexy, E621 Anticheat bypasses"
+  Title = "Credits",
+  Text = "Lazyllama for BtrScript"
 })
 wait(5)
 Instance.new("BindableFunction").OnInvoke = function(_ARG_0_)
   if _ARG_0_ == "Yes" then
     _UPVALUE0_()
-    _UPVALUE1_("Discord Copied")
+    _UPVALUE1_("Name and Tag Copied")
   end
 end
 game:GetService("StarterGui"):SetCore("SendNotification", {
-  Title = "V.G Hub Discord",
+  Title = "Lazyllama's Discord?",
   Text = "Copy to clipboard?",
   Duration = 5,
   Callback = Instance.new("BindableFunction"),
