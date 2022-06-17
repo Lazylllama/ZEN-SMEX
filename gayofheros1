@@ -438,20 +438,6 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(randomPlayer.Character.Head.Position.X, randomPlayer.Character.Head.Position.Y, randomPlayer.Character.Head.Position.Z))
 end)
 
-local Button22 = Selction6:CreateButton("Teleport", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-    CFrame.new(
-    Vector3.new(
-        TPlayer.Character.Head.Position.X,
-        TPlayer.Character.Head.Position.Y,
-        TPlayer.Character.Head.Position.Z
-    )
-)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(TPlayer.Character.Head.Position.X, TPlayer.Character.Head.Position.Y, TPlayer.Character.Head.Position.Z))
-end)
-
-
-
 local Button1 = Section2:CreateButton("Lag Switch F3", function()
 local X = false
 local C = settings()
@@ -535,11 +521,25 @@ function Teleport()
     end
 end
 
+
 -- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
 Teleport() 
 end)
 local Button1 = Section2:CreateButton("Rejoin", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer) end)
+
+local Button22 = Selction6:CreateButton("Teleport", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+    CFrame.new(
+    Vector3.new(
+        TPlayer.Character.Head.Position.X,
+        TPlayer.Character.Head.Position.Y,
+        TPlayer.Character.Head.Position.Z
+    )
+)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(TPlayer.Character.Head.Position.X, TPlayer.Character.Head.Position.Y, TPlayer.Character.Head.Position.Z))
+end)
+
 
 local Toggle3 = Section3:CreateToggle("UI Toggle", nil, function(State)
 	Window:Toggle(State)
