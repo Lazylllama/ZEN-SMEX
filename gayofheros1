@@ -114,18 +114,23 @@ while tt do
     pcall(
         function()
             for i, v in pairs(game.Workspace:GetChildren()) do
-                if v.ClassName == "Model" and SS == All and v.Name = Thug, Civillian, Police and v:FindFirstChild and v.Humanoid.Health > 0 then
+                if v.ClassName == "Model" and v.Name == 'Civilian' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
                         v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
-                else
-                    if v.ClassName == "Model" and v.Name == SS and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
-                            v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
-                    end
+            for i, v in pairs(game.Workspace:GetChildren()) do                        
+                if v.ClassName == "Model" and v.Name == 'Police' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
+                        v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+            for i, v in pairs(game.Workspace:GetChildren()) do
+                if v.ClassName == "Model" and v.Name == 'Thug' and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
+                        v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
                 end
             end
-        end    
-    )   
+        end
+    end
+end   
+)   
 end
 end) 
 
