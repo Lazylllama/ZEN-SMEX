@@ -243,9 +243,7 @@ end)
 local TextBox1 = Section2:CreateTextBox("JumpPower", "Only numbers", true, function(Value)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
 end)
-local TextBox1 = Section6:CreateTextBox("Player", "Player's username", true, function(Value)
-    local TPlayer = Value
-end)
+
 local Toggle1 = Section2:CreateToggle("Infinite Jump", nil, function(State)
 Infinite = State
 game:GetService("UserInputService").JumpRequest:connect(function()
@@ -528,7 +526,11 @@ end)
 local Button1 = Section2:CreateButton("Rejoin", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer) end)
 
-local Button22 = Selction6:CreateButton("Teleport", function()
+
+local TextBox1 = Section6:CreateTextBox("Player", "Player's username", true, function(Value)
+    local TPlayer = Value
+end)
+local Button1 = Section6:CreateButton("Teleport", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
     CFrame.new(
     Vector3.new(
